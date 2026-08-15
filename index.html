@@ -34,7 +34,6 @@
       background:#05070a;
     }
 
-    /* The source video itself now fills the entire viewport. */
     .hero-video{
       position:absolute;
       inset:0;
@@ -72,7 +71,7 @@
       left:max(24px,env(safe-area-inset-left));
       right:max(24px,env(safe-area-inset-right));
       display:flex;
-      justify-content:space-between;
+      justify-content:flex-end;
       align-items:center;
       gap:24px;
       letter-spacing:.18em;
@@ -81,7 +80,6 @@
       color:rgba(255,255,255,.76);
     }
 
-    .brand{font-weight:700;letter-spacing:.30em}
     .status{display:flex;align-items:center;gap:9px;white-space:nowrap}
     .dot{
       width:5px;height:5px;border-radius:50%;
@@ -186,7 +184,6 @@
     <div class="grain"></div>
 
     <header class="top">
-      <div class="brand"><img src="assets/zearo-logo-system.png" alt="ZEARO" style="display:block;width:140px;max-width:28vw;height:auto;"></div>
       <div class="status"><span class="dot"></span><span>Preparing for launch</span></div>
     </header>
 
@@ -212,6 +209,3 @@
   </script>
 </body>
 </html>
-
-
-
