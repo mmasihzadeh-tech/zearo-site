@@ -1,17 +1,21 @@
 {
-  "contract": "ZEARO_WEBSITE_WORKSPACE_ACTION_V1",
-  "owner": "Website Workspace",
+  "contract": "ZEARO_ZWP_WEBSITE_SURFACE_ACTION_V1",
+  "product": "ZEARO Web Presence",
+  "productId": "zwp",
+  "surface": "website",
+  "owner": "ZEARO Web Presence",
   "interpreter": "ZEE",
-  "previewAction": "zearo.website.preview.apply",
+  "previewAction": "zearo.zwp.website.preview.apply",
   "futureActions": [
-    "zearo.website.revision.save",
-    "zearo.website.revision.restore",
-    "zearo.website.publish.request",
-    "zearo.website.domain.connect.request"
+    "zearo.zwp.website.revision.save",
+    "zearo.zwp.website.revision.restore",
+    "zearo.zwp.website.publish.request",
+    "zearo.zwp.website.domain.connect.request"
   ],
   "authorityRules": {
     "zeeMayInterpret": true,
     "zeeIsSystemOfRecord": false,
+    "websiteIsProductBoundary": false,
     "publishRequires": ["permission", "validation", "confirmation"],
     "dnsChangeRequires": ["permission", "validation", "confirmation"],
     "paymentWriteRequires": ["permission", "validation", "confirmation"]
