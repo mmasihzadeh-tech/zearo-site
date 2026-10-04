@@ -10,16 +10,17 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zearo.ir/" />
   <title>ZEARO | In Development</title>
+
   <style>
     :root{
       --fg:#f4f7f8;
       --muted:rgba(244,247,248,.66);
       --soft:rgba(244,247,248,.46);
-      --line:rgba(255,255,255,.15);
-      --glass:rgba(8,13,18,.26);
     }
+
     *{box-sizing:border-box}
     html,body{width:100%;height:100%;margin:0}
+
     body{
       overflow:hidden;
       background:#05080b;
@@ -28,6 +29,7 @@
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
+
     .stage{
       position:fixed;
       inset:0;
@@ -37,6 +39,7 @@
       overflow:hidden;
       background:#05080b;
     }
+
     .hero-video{
       position:absolute;
       inset:0;
@@ -50,6 +53,7 @@
       filter:saturate(.72) contrast(1.08) brightness(.55);
       transform:scale(1.025);
     }
+
     .veil{
       position:absolute;
       inset:0;
@@ -59,6 +63,29 @@
         radial-gradient(circle at 76% 47%, rgba(218,214,183,.12), transparent 18%),
         linear-gradient(to bottom, rgba(2,5,8,.30), rgba(2,5,8,.05) 42%, rgba(2,5,8,.35) 100%);
     }
+
+    .grid{
+      position:absolute;
+      inset:0;
+      z-index:-3;
+      pointer-events:none;
+      opacity:.18;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 24.9%,
+          rgba(255,255,255,.08) 25%,
+          transparent 25.1%,
+          transparent 49.9%,
+          rgba(255,255,255,.08) 50%,
+          transparent 50.1%,
+          transparent 74.9%,
+          rgba(255,255,255,.08) 75%,
+          transparent 75.1%
+        );
+      mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 82%);
+    }
+
     .grain{
       position:absolute;
       inset:0;
@@ -67,29 +94,26 @@
       pointer-events:none;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.62'/%3E%3C/svg%3E");
     }
-    .grid{
-      position:absolute;
-      inset:0;
-      z-index:-3;
-      pointer-events:none;
-      opacity:.18;
-      background:
-        linear-gradient(90deg,transparent 24.9%,rgba(255,255,255,.08) 25%,transparent 25.1%,transparent 49.9%,rgba(255,255,255,.08) 50%,transparent 50.1%,transparent 74.9%,rgba(255,255,255,.08) 75%,transparent 75.1%);
-      mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),transparent 82%);
-    }
+
     .world{
       position:absolute;
       z-index:-2;
       left:50%;
       top:48%;
-      width:min(900px,78vw);
+      width:min(940px,80vw);
       aspect-ratio:1;
       transform:translate(-50%,-50%);
-      opacity:.72;
-      filter:drop-shadow(0 0 38px rgba(155,210,236,.12));
+      opacity:.86;
+      filter:drop-shadow(0 0 50px rgba(155,210,236,.16));
       animation:float 12s ease-in-out infinite;
     }
-    .world svg{width:100%;height:100%;display:block}
+
+    .world svg{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
     .top{
       position:absolute;
       top:max(28px,env(safe-area-inset-top));
@@ -103,7 +127,13 @@
       text-transform:uppercase;
       letter-spacing:.20em;
     }
-    .brand{font-size:18px;letter-spacing:.34em;font-weight:500}
+
+    .brand{
+      font-size:18px;
+      letter-spacing:.34em;
+      font-weight:500;
+    }
+
     .status{
       display:flex;
       align-items:center;
@@ -118,11 +148,15 @@
       letter-spacing:.08em;
       text-transform:none;
     }
+
     .dot{
-      width:6px;height:6px;border-radius:50%;
+      width:6px;
+      height:6px;
+      border-radius:50%;
       background:#dff4ff;
       box-shadow:0 0 14px rgba(188,232,255,.9);
     }
+
     .center{
       position:absolute;
       inset:0;
@@ -131,6 +165,7 @@
       padding:116px 22px 96px;
       text-align:center;
     }
+
     .hero{
       width:min(920px,92vw);
       display:flex;
@@ -138,6 +173,7 @@
       align-items:center;
       animation:appear 1.2s cubic-bezier(.2,.72,.2,1) both;
     }
+
     h1{
       margin:0;
       max-width:900px;
@@ -147,6 +183,7 @@
       letter-spacing:-.02em;
       text-shadow:0 3px 32px rgba(0,0,0,.56);
     }
+
     .sub{
       margin:26px 0 0;
       font-size:clamp(11px,1.05vw,14px);
@@ -155,12 +192,14 @@
       text-transform:uppercase;
       color:rgba(255,255,255,.75);
     }
+
     .rule{
       width:38px;
       height:1px;
       margin:28px 0 24px;
       background:rgba(255,255,255,.56);
     }
+
     .desc{
       margin:0;
       max-width:760px;
@@ -169,6 +208,7 @@
       letter-spacing:.04em;
       color:var(--muted);
     }
+
     .actions{
       margin-top:30px;
       display:flex;
@@ -177,6 +217,7 @@
       gap:18px;
       flex-wrap:wrap;
     }
+
     .primary,.secondary{
       display:inline-flex;
       align-items:center;
@@ -187,23 +228,32 @@
       font-size:13px;
       letter-spacing:.04em;
     }
+
     .primary{
       min-width:184px;
-      gap:22px;
-      padding:0 22px;
-      border:1px solid rgba(196,231,248,.45);
+      gap:18px;
+      padding:0 20px;
+      border:1px solid rgba(196,231,248,.28);
       border-radius:999px;
-      background:linear-gradient(180deg,rgba(146,205,234,.10),rgba(12,18,24,.36));
-      box-shadow:0 0 0 1px rgba(142,207,239,.06) inset,0 0 22px rgba(113,194,236,.16);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
+      background:linear-gradient(
+        180deg,
+        rgba(146,205,234,.06),
+        rgba(12,18,24,.24)
+      );
+      box-shadow:
+        0 0 0 1px rgba(142,207,239,.03) inset,
+        0 0 14px rgba(113,194,236,.08);
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
     }
+
     .secondary{
       min-width:auto;
       padding:0 4px;
-      color:rgba(255,255,255,.56);
-      border-bottom:1px solid rgba(255,255,255,.24);
+      color:rgba(255,255,255,.50);
+      border-bottom:1px solid rgba(255,255,255,.16);
     }
+
     .bottom{
       position:absolute;
       left:max(34px,env(safe-area-inset-left));
@@ -217,34 +267,108 @@
       text-transform:uppercase;
       color:var(--soft);
     }
+
     @keyframes appear{
-      from{opacity:0;transform:translateY(18px);filter:blur(5px)}
-      to{opacity:1;transform:translateY(0);filter:blur(0)}
+      from{
+        opacity:0;
+        transform:translateY(18px);
+        filter:blur(5px)
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+        filter:blur(0)
+      }
     }
+
     @keyframes float{
-      0%,100%{transform:translate(-50%,-50%) scale(1)}
-      50%{transform:translate(-50%,-51.2%) scale(1.012)}
+      0%,100%{
+        transform:translate(-50%,-50%) scale(1)
+      }
+      50%{
+        transform:translate(-50%,-51.2%) scale(1.012)
+      }
     }
+
     @media(max-width:700px){
-      .top{top:max(20px,env(safe-area-inset-top));left:20px;right:20px}
+      .top{
+        top:max(20px,env(safe-area-inset-top));
+        left:20px;
+        right:20px;
+      }
+
       .brand{font-size:15px}
-      .status{font-size:10px;padding:8px 11px}
-      .center{padding:100px 18px 86px}
-      .world{width:125vw;top:45%;opacity:.56}
-      h1{font-size:clamp(38px,11vw,58px);line-height:1.02}
-      .sub{font-size:10px;line-height:1.8;letter-spacing:.22em}
-      .desc{max-width:330px;font-size:12px}
-      .actions{margin-top:24px;gap:14px}
-      .primary{min-width:170px}
-      .bottom{left:20px;right:20px;bottom:max(18px,env(safe-area-inset-bottom))}
-      .bottom .right{display:none}
+
+      .status{
+        font-size:10px;
+        padding:8px 11px;
+      }
+
+      .center{
+        padding:100px 18px 86px;
+      }
+
+      .world{
+        width:125vw;
+        top:45%;
+        opacity:.64;
+      }
+
+      h1{
+        font-size:clamp(38px,11vw,58px);
+        line-height:1.02;
+      }
+
+      .sub{
+        font-size:10px;
+        line-height:1.8;
+        letter-spacing:.22em;
+      }
+
+      .desc{
+        max-width:330px;
+        font-size:12px;
+      }
+
+      .actions{
+        margin-top:24px;
+        gap:14px;
+      }
+
+      .primary{
+        min-width:170px;
+      }
+
+      .bottom{
+        left:20px;
+        right:20px;
+        bottom:max(18px,env(safe-area-inset-bottom));
+      }
+
+      .bottom .right{
+        display:none;
+      }
     }
-    @media(prefers-reduced-motion:reduce){.hero,.world{animation:none}}
+
+    @media(prefers-reduced-motion:reduce){
+      .hero,.world{
+        animation:none;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="stage">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    >
       <source src="assets/zearo-coming-soon.mp4" type="video/mp4">
     </video>
 
@@ -254,34 +378,152 @@
     <div class="world" aria-hidden="true">
       <svg viewBox="0 0 900 900" role="presentation">
         <defs>
-          <radialGradient id="orb" cx="62%" cy="34%" r="64%">
-            <stop offset="0" stop-color="#dff4ff" stop-opacity=".22"/>
-            <stop offset=".38" stop-color="#7fb0ca" stop-opacity=".10"/>
-            <stop offset=".72" stop-color="#162733" stop-opacity=".16"/>
-            <stop offset="1" stop-color="#05080b" stop-opacity="0"/>
+          <radialGradient id="planetFill" cx="58%" cy="34%" r="68%">
+            <stop offset="0" stop-color="#e8f7ff" stop-opacity=".24"/>
+            <stop offset=".28" stop-color="#7baeca" stop-opacity=".14"/>
+            <stop offset=".62" stop-color="#19303d" stop-opacity=".24"/>
+            <stop offset="1" stop-color="#071018" stop-opacity=".02"/>
           </radialGradient>
-          <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#e9f8ff" stop-opacity=".54"/>
-            <stop offset=".48" stop-color="#8cc7e4" stop-opacity=".22"/>
-            <stop offset="1" stop-color="#d8b985" stop-opacity=".10"/>
+
+          <linearGradient id="planetRim" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#eefbff" stop-opacity=".52"/>
+            <stop offset=".52" stop-color="#8cc7e4" stop-opacity=".20"/>
+            <stop offset="1" stop-color="#f2d6a0" stop-opacity=".16"/>
           </linearGradient>
+
+          <filter id="softBlur">
+            <feGaussianBlur stdDeviation="16"/>
+          </filter>
         </defs>
-        <circle cx="450" cy="450" r="292" fill="url(#orb)" stroke="url(#rim)" stroke-width="1.4"/>
-        <ellipse cx="450" cy="450" rx="292" ry="104" fill="none" stroke="#d8f1ff" stroke-opacity=".14"/>
-        <ellipse cx="450" cy="450" rx="292" ry="188" fill="none" stroke="#d8f1ff" stroke-opacity=".10"/>
-        <ellipse cx="450" cy="450" rx="104" ry="292" fill="none" stroke="#d8f1ff" stroke-opacity=".14"/>
-        <ellipse cx="450" cy="450" rx="188" ry="292" fill="none" stroke="#d8f1ff" stroke-opacity=".09"/>
-        <circle cx="450" cy="450" r="344" fill="none" stroke="#d8f1ff" stroke-opacity=".10" stroke-dasharray="2 7"/>
-        <circle cx="450" cy="450" r="380" fill="none" stroke="#d8f1ff" stroke-opacity=".08" stroke-dasharray="1 9"/>
-        <path d="M205 520 C315 332 470 300 688 388" fill="none" stroke="#dff4ff" stroke-opacity=".25"/>
-        <path d="M248 355 C390 430 490 508 667 552" fill="none" stroke="#dff4ff" stroke-opacity=".18"/>
-        <path d="M320 648 C390 510 510 390 640 266" fill="none" stroke="#dff4ff" stroke-opacity=".15"/>
+
+        <circle
+          cx="450"
+          cy="450"
+          r="292"
+          fill="url(#planetFill)"
+          stroke="url(#planetRim)"
+          stroke-width="1.2"
+        />
+
+        <circle
+          cx="450"
+          cy="450"
+          r="276"
+          fill="none"
+          stroke="rgba(255,255,255,.06)"
+        />
+
+        <ellipse
+          cx="450"
+          cy="450"
+          rx="292"
+          ry="104"
+          fill="none"
+          stroke="#d8f1ff"
+          stroke-opacity=".10"
+        />
+
+        <ellipse
+          cx="450"
+          cy="450"
+          rx="292"
+          ry="188"
+          fill="none"
+          stroke="#d8f1ff"
+          stroke-opacity=".07"
+        />
+
+        <ellipse
+          cx="450"
+          cy="450"
+          rx="104"
+          ry="292"
+          fill="none"
+          stroke="#d8f1ff"
+          stroke-opacity=".08"
+        />
+
+        <ellipse
+          cx="450"
+          cy="450"
+          rx="188"
+          ry="292"
+          fill="none"
+          stroke="#d8f1ff"
+          stroke-opacity=".06"
+        />
+
+        <circle
+          cx="450"
+          cy="450"
+          r="344"
+          fill="none"
+          stroke="#d8f1ff"
+          stroke-opacity=".08"
+          stroke-dasharray="2 8"
+        />
+
+        <circle
+          cx="450"
+          cy="450"
+          r="380"
+          fill="none"
+          stroke="#d8f1ff"
+          stroke-opacity=".06"
+          stroke-dasharray="1 10"
+        />
+
+        <path
+          d="M205 520 C315 332 470 300 688 388"
+          fill="none"
+          stroke="#dff4ff"
+          stroke-opacity=".18"
+        />
+
+        <path
+          d="M248 355 C390 430 490 508 667 552"
+          fill="none"
+          stroke="#dff4ff"
+          stroke-opacity=".14"
+        />
+
+        <path
+          d="M320 648 C390 510 510 390 640 266"
+          fill="none"
+          stroke="#dff4ff"
+          stroke-opacity=".12"
+        />
+
         <g fill="#e9f8ff">
-          <circle cx="271" cy="398" r="3.2"/><circle cx="352" cy="342" r="2.6"/>
-          <circle cx="452" cy="332" r="3.4"/><circle cx="548" cy="365" r="2.5"/>
-          <circle cx="633" cy="409" r="3.1"/><circle cx="572" cy="522" r="2.8"/>
-          <circle cx="404" cy="545" r="2.7"/><circle cx="318" cy="505" r="2.3"/>
+          <circle cx="271" cy="398" r="3.2"/>
+          <circle cx="352" cy="342" r="2.6"/>
+          <circle cx="452" cy="332" r="3.4"/>
+          <circle cx="548" cy="365" r="2.5"/>
+          <circle cx="633" cy="409" r="3.1"/>
+          <circle cx="572" cy="522" r="2.8"/>
+          <circle cx="404" cy="545" r="2.7"/>
+          <circle cx="318" cy="505" r="2.3"/>
         </g>
+
+        <ellipse
+          cx="535"
+          cy="360"
+          rx="115"
+          ry="70"
+          fill="#ffffff"
+          opacity=".08"
+          filter="url(#softBlur)"
+        />
+
+        <ellipse
+          cx="430"
+          cy="520"
+          rx="160"
+          ry="96"
+          fill="#7fc5e6"
+          opacity=".05"
+          filter="url(#softBlur)"
+        />
       </svg>
     </div>
 
@@ -289,33 +531,63 @@
 
     <header class="top">
       <div class="brand">ZEARO</div>
-      <div class="status"><span class="dot"></span><span>In development</span></div>
+
+      <div class="status">
+        <span class="dot"></span>
+        <span>In development</span>
+      </div>
     </header>
 
     <section class="center" aria-label="ZEARO pre-launch">
       <div class="hero">
-        <h1>A new business<br>operating world is taking shape.</h1>
-        <p class="sub">Modern. Intelligent. In motion.</p>
+        <h1>
+          A new business<br>
+          operating world is taking shape.
+        </h1>
+
+        <p class="sub">
+          Modern. Intelligent. In motion.
+        </p>
+
         <div class="rule"></div>
-        <p class="desc">Built around clarity, control, and connected business intelligence.</p>
+
+        <p class="desc">
+          Built around clarity, control, and connected business intelligence.
+        </p>
+
         <div class="actions">
-          <span class="primary">Explore ZEARO <span aria-hidden="true">→</span></span>
-          <span class="secondary">Product launch soon</span>
+          <span class="primary">
+            Explore ZEARO
+            <span aria-hidden="true">→</span>
+          </span>
+
+          <span class="secondary">
+            Product launch soon
+          </span>
         </div>
       </div>
     </section>
 
     <footer class="bottom">
       <div>zearo.ir</div>
-      <div class="right">Building the operating layer for modern business</div>
+      <div class="right">
+        Building the operating layer for modern business
+      </div>
     </footer>
   </main>
 
   <script>
-    const video=document.querySelector('.hero-video');
-    const start=()=>video.play().catch(()=>{});
+    const video = document.querySelector('.hero-video');
+
+    const start = () => {
+      video.play().catch(() => {});
+    };
+
     start();
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden)start();});
+
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) start();
+    });
   </script>
 </body>
 </html>
