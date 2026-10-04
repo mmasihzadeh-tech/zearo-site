@@ -19,7 +19,12 @@
     }
 
     *{box-sizing:border-box}
-    html,body{width:100%;height:100%;margin:0}
+
+    html,body{
+      width:100%;
+      height:100%;
+      margin:0;
+    }
 
     body{
       overflow:hidden;
@@ -103,8 +108,10 @@
       width:min(940px,80vw);
       aspect-ratio:1;
       transform:translate(-50%,-50%);
-      opacity:.74;
-      filter:drop-shadow(0 0 50px rgba(155,210,236,.16));
+      opacity:.76;
+      filter:
+        drop-shadow(0 0 62px rgba(155,210,236,.22))
+        drop-shadow(0 0 18px rgba(255,255,255,.05));
       animation:float 12s ease-in-out infinite;
     }
 
@@ -233,16 +240,17 @@
       min-width:184px;
       gap:18px;
       padding:0 20px;
-      border:1px solid rgba(196,231,248,.28);
+      border:1px solid rgba(196,231,248,.34);
       border-radius:999px;
       background:linear-gradient(
         180deg,
-        rgba(146,205,234,.06),
-        rgba(12,18,24,.24)
+        rgba(146,205,234,.08),
+        rgba(12,18,24,.28)
       );
       box-shadow:
-        0 0 0 1px rgba(142,207,239,.03) inset,
-        0 0 14px rgba(113,194,236,.08);
+        0 0 0 1px rgba(142,207,239,.05) inset,
+        0 0 18px rgba(113,194,236,.12),
+        0 0 30px rgba(113,194,236,.05);
       backdrop-filter:blur(8px);
       -webkit-backdrop-filter:blur(8px);
     }
@@ -272,21 +280,21 @@
       from{
         opacity:0;
         transform:translateY(18px);
-        filter:blur(5px)
+        filter:blur(5px);
       }
       to{
         opacity:1;
         transform:translateY(0);
-        filter:blur(0)
+        filter:blur(0);
       }
     }
 
     @keyframes float{
       0%,100%{
-        transform:translate(-50%,-50%) scale(1)
+        transform:translate(-50%,-50%) scale(1);
       }
       50%{
-        transform:translate(-50%,-51.2%) scale(1.012)
+        transform:translate(-50%,-51.2%) scale(1.012);
       }
     }
 
@@ -310,12 +318,12 @@
 
       .world{
         width:125vw;
-        top:45%;
-        opacity:.64;
+        top:47%;
+        opacity:.56;
       }
 
       h1{
-        font-size:clamp(38px,11vw,58px);
+        font-size:clamp(36px,10vw,54px);
         line-height:1.02;
       }
 
@@ -360,6 +368,7 @@
 
 <body>
   <main class="stage">
+
     <video
       class="hero-video"
       autoplay
@@ -377,6 +386,7 @@
 
     <div class="world" aria-hidden="true">
       <svg viewBox="0 0 900 900" role="presentation">
+
         <defs>
           <radialGradient id="planetFill" cx="58%" cy="34%" r="68%">
             <stop offset="0" stop-color="#e8f7ff" stop-opacity=".24"/>
@@ -524,6 +534,27 @@
           opacity=".05"
           filter="url(#softBlur)"
         />
+
+        <ellipse
+          cx="450"
+          cy="455"
+          rx="215"
+          ry="150"
+          fill="#9fdcff"
+          opacity=".045"
+          filter="url(#softBlur)"
+        />
+
+        <ellipse
+          cx="450"
+          cy="450"
+          rx="245"
+          ry="245"
+          fill="none"
+          stroke="#cfeeff"
+          stroke-opacity=".045"
+        />
+
       </svg>
     </div>
 
@@ -540,6 +571,7 @@
 
     <section class="center" aria-label="ZEARO pre-launch">
       <div class="hero">
+
         <h1>
           A new business<br>
           operating world is taking shape.
@@ -556,6 +588,7 @@
         </p>
 
         <div class="actions">
+
           <span class="primary">
             Explore ZEARO
             <span aria-hidden="true">→</span>
@@ -564,16 +597,19 @@
           <span class="secondary">
             Product launch soon
           </span>
+
         </div>
       </div>
     </section>
 
     <footer class="bottom">
       <div>zearo.ir</div>
+
       <div class="right">
         Building the operating layer for modern business
       </div>
     </footer>
+
   </main>
 
   <script>
@@ -589,5 +625,6 @@
       if (!document.hidden) start();
     });
   </script>
+
 </body>
 </html>
