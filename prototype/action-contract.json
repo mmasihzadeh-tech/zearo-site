@@ -1,0 +1,26 @@
+{
+  "contract": "ZEARO_WEBSITE_WORKSPACE_ACTION_V1",
+  "owner": "Website Workspace",
+  "interpreter": "ZEE",
+  "previewAction": "zearo.website.preview.apply",
+  "futureActions": [
+    "zearo.website.revision.save",
+    "zearo.website.revision.restore",
+    "zearo.website.publish.request",
+    "zearo.website.domain.connect.request"
+  ],
+  "authorityRules": {
+    "zeeMayInterpret": true,
+    "zeeIsSystemOfRecord": false,
+    "publishRequires": ["permission", "validation", "confirmation"],
+    "dnsChangeRequires": ["permission", "validation", "confirmation"],
+    "paymentWriteRequires": ["permission", "validation", "confirmation"]
+  },
+  "mvp": {
+    "mode": "preview-only",
+    "customerData": false,
+    "liveOperationalWrites": false,
+    "productionPublish": false,
+    "dnsWrites": false
+  }
+}
