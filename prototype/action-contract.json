@@ -1,0 +1,30 @@
+{
+  "contract": "ZEARO_ZWP_WEBSITE_SURFACE_ACTION_V1",
+  "product": "ZEARO Web Presence",
+  "productId": "zwp",
+  "surface": "website",
+  "owner": "ZEARO Web Presence",
+  "interpreter": "ZEE",
+  "previewAction": "zearo.zwp.website.preview.apply",
+  "futureActions": [
+    "zearo.zwp.website.revision.save",
+    "zearo.zwp.website.revision.restore",
+    "zearo.zwp.website.publish.request",
+    "zearo.zwp.website.domain.connect.request"
+  ],
+  "authorityRules": {
+    "zeeMayInterpret": true,
+    "zeeIsSystemOfRecord": false,
+    "websiteIsProductBoundary": false,
+    "publishRequires": ["permission", "validation", "confirmation"],
+    "dnsChangeRequires": ["permission", "validation", "confirmation"],
+    "paymentWriteRequires": ["permission", "validation", "confirmation"]
+  },
+  "mvp": {
+    "mode": "preview-only",
+    "customerData": false,
+    "liveOperationalWrites": false,
+    "productionPublish": false,
+    "dnsWrites": false
+  }
+}

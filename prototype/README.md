@@ -1,23 +1,30 @@
-# ZEARO Website Workspace — Technical PoC
+# ZEARO Web Presence (ZWP) — Website Surface Phase 1 MVP
 
-This isolated prototype uses the ZEARO public site as the first reference tenant without changing the live root landing page.
+Canonical product boundary: **ZWP = ZEARO Web Presence / حضور در وب**.
 
-## Purpose
-- Prove a reusable Template + Block rendering model.
-- Keep website persistent state separate from ZEE.
-- Let ZEE eventually compose/revise blocks through an authorized action layer.
-- Prepare future Corporate / Store / B2B templates without duplicating operational business data.
+Website is one major surface inside ZWP. This isolated MVP uses the public ZEARO site as the first reference surface while keeping the current root landing page unchanged.
 
-## Boundaries
-- No customer/live data.
-- No inventory/accounting/payment logic is implemented here.
-- No production publish automation.
-- Business data must later arrive through canonical ZEARO module contracts.
-- Publish/DNS/payment/state changes remain behind Permission + Validation + Confirmation.
+## Delivered in Phase 1
+- Reusable template registry: Corporate / Store / B2B RFQ.
+- Generic block renderer.
+- Desktop and mobile preview modes.
+- Preview-only ZEE instruction adapter.
+- Local revision save / restore proof.
+- Explicit ZWP-owned Website surface action contract.
+- No production publish, DNS writes, payments, or customer/live data writes.
 
-## Current proof
-site-config.js is the website state/config input.
-site-engine.js is a generic block renderer.
-index.html is only the shell.
+## Architecture boundary
+ZWP owns Web Presence state. The Website surface owns website-specific state/revisions through approved ZWP contracts.
+ZEE interprets user intent and proposes/executes authorized preview actions; it is not the system of record.
+Canonical ZEARO modules remain authoritative for catalog, inventory, Party/CRM, pricing, orders, Treasury, Accounting, Sales Invoice, and tax workflows.
 
-This is intentionally a technical proving ground, not the final Website Workspace runtime.
+## Technical test
+Open /prototype/ after deployment.
+Switch templates.
+Apply a ZEE preview instruction such as:
+- switch to store
+- switch to b2b
+- make it more sales focused
+Save a revision, change the template, then restore the previous revision.
+
+This is a bounded technical proof for the Website surface of ZWP, not proof that tenant ZWP runtime or production publishing is AVAILABLE.

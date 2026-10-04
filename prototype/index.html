@@ -3,11 +3,67 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ZEARO Website Workspace — Template PoC</title>
+  <meta name="theme-color" content="#edf4f8" />
+  <title>ZEARO Web Presence — Website Surface MVP</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main id="app"></main>
+  <div class="workspace">
+    <aside class="workspaceRail">
+      <div>
+        <div class="railBrand">ZEARO</div>
+        <div class="railLabel">Web Presence / حضور در وب</div>
+      </div>
+
+      <div class="railGroup">
+        <div class="railRow"><span>Surface</span><strong>Website</strong></div>
+      </div>
+
+      <div class="railGroup">
+        <label for="templateSelect">Template</label>
+        <select id="templateSelect"></select>
+      </div>
+
+      <div class="railGroup">
+        <label for="zeeCommand">ZEE instruction</label>
+        <textarea id="zeeCommand" rows="4" placeholder="Example: switch to store and make the hero more sales focused"></textarea>
+        <button id="applyZee" class="railButton">Apply preview instruction</button>
+      </div>
+
+      <div class="railGroup">
+        <div class="railRow">
+          <span>Revision</span>
+          <strong id="revisionLabel">v1</strong>
+        </div>
+        <button id="saveRevision" class="railButton secondaryButton">Save revision</button>
+        <button id="restoreRevision" class="railButton secondaryButton">Restore previous</button>
+      </div>
+
+      <div class="railGroup">
+        <div class="statusPill"><span class="statusDot"></span><span id="workspaceStatus">Preview only</span></div>
+        <p class="railHint">Website is one surface inside ZWP. No DNS, payment, customer data, or production publish actions are performed by this MVP.</p>
+      </div>
+    </aside>
+
+    <main class="previewShell">
+      <div class="previewTopbar">
+        <div>
+          <span class="previewLabel">ZWP Website surface — technical preview</span>
+          <strong id="siteIdentity">zearo-reference-site</strong>
+        </div>
+        <div class="previewActions">
+          <button id="desktopMode" class="modeButton active">Desktop</button>
+          <button id="mobileMode" class="modeButton">Mobile</button>
+        </div>
+      </div>
+      <div class="canvasWrap">
+        <div id="previewFrame" class="previewFrame">
+          <div id="app"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
   <script src="site-config.js"></script>
   <script src="site-engine.js"></script>
 </body>
